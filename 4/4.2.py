@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-DATA_FILE = "users.json"
+DATA_FILE = "../users.json"
 
 
 # ---------- helpers ----------

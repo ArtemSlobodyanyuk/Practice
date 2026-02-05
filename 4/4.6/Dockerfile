@@ -9,7 +9,7 @@ COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Копіюємо код
-COPY app/ .
+COPY app .
 
 # Відкриваємо порт
 EXPOSE 5000
