@@ -1,18 +1,18 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
-# ===== КОЛЬОРИ ТЕМНОЇ ТЕМИ =====
+# кольри теми
 BG_COLOR = "#1e1e1e"
 FG_COLOR = "#ffffff"
 TEXT_BG = "#2b2b2b"
 TEXT_FG = "#ffffff"
 BTN_BG = "#3a3a3a"
 
-# ===== ГЛОБАЛЬНІ ЗМІННІ =====
+# глобальні змінні
 current_file = None
-is_saved = True  # прапорець, чи були зміни
+is_saved = True
 
-# ===== ФУНКЦІЇ =====
+# функції
 def new_file():
     global current_file, is_saved
     if not is_saved:
@@ -73,30 +73,30 @@ def ask_save_changes():
         "Зберегти зміни?",
         "У файлі є незбережені зміни. Зберегти перед виходом?"
     )
-    if response:  # Так
+    if response:
         save_file()
         return True
-    elif response is False:  # Ні
+    elif response is False:
         return True
-    else:  # Скасувати
+    else:
         return False
 
 def on_text_change(event=None):
     global is_saved
     is_saved = False
 
-# ===== ВІКНО =====
+# вікно
 window = tk.Tk()
 window.title("Блокнот")
 window.geometry("600x500")
 window.configure(bg=BG_COLOR)
 
-# ===== ТЕКСТОВЕ ПОЛЕ =====
+# текстове поле
 text_area = tk.Text(window, bg=TEXT_BG, fg=TEXT_FG, insertbackground=FG_COLOR)
 text_area.pack(fill=tk.BOTH, expand=True)
 text_area.bind("<<Modified>>", on_text_change)
 
-# ===== МЕНЮ =====
+# меню
 menu_bar = tk.Menu(window)
 window.config(menu=menu_bar)
 
@@ -110,7 +110,7 @@ file_menu.add_command(label="Вийти", command=exit_app)
 
 menu_bar.add_cascade(label="Файл", menu=file_menu)
 
-# ===== ОБРОБКА ЗАКРИТТЯ ВІКНА =====
+# закриття вікна
 window.protocol("WM_DELETE_WINDOW", exit_app)
 
 window.mainloop()

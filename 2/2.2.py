@@ -11,12 +11,12 @@ class Student:
         print("-" * 20)
 
 
-# Створення об’єктів
+# створення об’єктів
 student1 = Student("Іван Петренко", "КН-21", 4.5)
 student2 = Student("Олена Коваль", "КН-21", 4.8)
 student3 = Student("Андрій Шевченко", "КН-22", 4.2)
 
-# Виведення інформації
+# виведення
 student1.show_info()
 student2.show_info()
 student3.show_info()

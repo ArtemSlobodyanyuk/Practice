@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 import math
 
-# Абстрактний клас
+# абстрактний клас
 class Shape(ABC):
     @abstractmethod
     def area(self):
         pass
 
 
-# Коло
+# коло
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -17,7 +17,7 @@ class Circle(Shape):
         return math.pi * self.radius ** 2
 
 
-# Прямокутник
+# прямокутник
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -27,7 +27,7 @@ class Rectangle(Shape):
         return self.width * self.height
 
 
-# Приклад використання
+# приклад використання
 circle = Circle(5)
 rectangle = Rectangle(4, 6)
 

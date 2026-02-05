@@ -3,16 +3,16 @@ from tkinter import ttk, colorchooser, messagebox
 import json
 import os
 
-# ===== ФАЙЛ КОНФІГУРАЦІЇ =====
+# файл для конфігурації
 CONFIG_FILE = "../config.json"
 
-# ===== КОЛЬОРИ ТЕМНОЇ ТЕМИ =====
+# кольри теми
 BG_COLOR_DEFAULT = "#1e1e1e"
 FG_COLOR = "#ffffff"
 ENTRY_BG = "#2b2b2b"
 BTN_BG = "#3a3a3a"
 
-# ===== ЗАВАНТАЖЕННЯ КОНФІГУРАЦІЇ =====
+# завантаження  конвігурації
 if os.path.exists(CONFIG_FILE):
     with open(CONFIG_FILE, "r", encoding="utf-8") as f:
         config = json.load(f)
@@ -20,18 +20,18 @@ if os.path.exists(CONFIG_FILE):
 else:
     BG_COLOR = BG_COLOR_DEFAULT
 
-# ===== ВІКНО =====
+# вікно
 window = tk.Tk()
 window.title("Програма з вкладками")
 window.geometry("500x400")
 window.resizable(False, False)
 window.configure(bg=BG_COLOR)
 
-# ===== ЗМІННІ =====
+# змінні
 name_var = tk.StringVar()
 age_var = tk.StringVar()
 
-# ===== СТИЛІ TTK =====
+# стилі ттк
 style = ttk.Style()
 style.theme_use("default")
 
@@ -41,14 +41,14 @@ style.map("TNotebook.Tab",
           background=[("selected", BG_COLOR)],
           foreground=[("selected", FG_COLOR)])
 
-# ===== Notebook =====
+# Notebook
 notebook = ttk.Notebook(window)
 notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-# ===== Вкладки =====
+# вкладки
 tabs = {}
 
-# --- Головна ---
+# головна
 tab_main = tk.Frame(notebook, bg=BG_COLOR)
 tabs["Головна"] = tab_main
 notebook.add(tab_main, text="Головна")
@@ -66,7 +66,7 @@ def save_data():
 
 tk.Button(tab_main, text="Зберегти", command=save_data, bg=BTN_BG, fg=FG_COLOR, borderwidth=0).grid(row=2, column=0, columnspan=2, pady=20)
 
-# --- Налаштування ---
+# налаштування
 tab_settings = tk.Frame(notebook, bg=BG_COLOR)
 tabs["Налаштування"] = tab_settings
 notebook.add(tab_settings, text="Налаштування")
@@ -85,13 +85,12 @@ def choose_color():
             for widget in tab.winfo_children():
                 if isinstance(widget, tk.Label) or isinstance(widget, tk.Entry) or isinstance(widget, tk.Button):
                     widget.configure(bg=BG_COLOR if isinstance(widget, tk.Label) else ENTRY_BG, fg=FG_COLOR)
-        # Збереження
         with open(CONFIG_FILE, "w", encoding="utf-8") as f:
             json.dump({"bg_color": BG_COLOR}, f)
 
 tk.Button(tab_settings, text="Вибрати колір", command=choose_color, bg=BTN_BG, fg=FG_COLOR, borderwidth=0).pack()
 
-# --- Про програму ---
+# про програму
 tab_about = tk.Frame(notebook, bg=BG_COLOR)
 tabs["Про програму"] = tab_about
 notebook.add(tab_about, text="Про програму")
@@ -108,5 +107,5 @@ info_text = (
 )
 tk.Label(tab_about, text=info_text, bg=BG_COLOR, fg=FG_COLOR, justify="left").pack(padx=20, pady=20, anchor="nw")
 
-# ===== ЗАПУСК =====
+# запуск
 window.mainloop()

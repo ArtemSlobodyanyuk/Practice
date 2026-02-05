@@ -6,7 +6,7 @@ class Animal(ABC):
         self._name = name
         self.weight = weight  # виклик setter
 
-    # ===== Властивість weight =====
+    # властивість weight
     @property
     def weight(self):
         return self._weight
@@ -47,7 +47,7 @@ class Keeper:
         self.name = name
         self.experience = experience  # setter
 
-    # ===== Властивість experience =====
+    # властивість experience
     @property
     def experience(self):
         return self._experience
@@ -64,11 +64,5 @@ class Keeper:
 lion = Lion("Сімба", 190)
 keeper = Keeper("Олексій", 5)
 
-print(lion.weight)      # 190
-lion.weight = 200       # ✔ коректно
-
-# ❌ помилка
-# lion.weight = -10
-
-# ❌ помилка
-# keeper.experience = -3
+print(lion.weight)
+lion.weight = 200

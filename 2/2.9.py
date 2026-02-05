@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-# ===== Абстракція + Наслідування =====
+# абстракція і наслідування
 class Animal(ABC):
     def __init__(self, name):
         self._name = name  # інкапсуляція
@@ -15,7 +15,7 @@ class Animal(ABC):
         pass
 
 
-# ===== Поліморфізм =====
+# поліморфізм
 class Lion(Animal):
     def make_sound(self):
         return "Р-р-р!"
@@ -32,7 +32,7 @@ class Elephant(Animal):
         return "Слон їсть траву"
 
 
-# ===== Окремий клас для взаємодії =====
+# окремий клас для взаємодії
 class Keeper:
     def __init__(self, name):
         self.name = name

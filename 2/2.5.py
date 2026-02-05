@@ -17,8 +17,6 @@ class BankAccount:
     def get_balance(self):
         return self.__balance
 
-
-# Демонстрація
 account = BankAccount(1000)
 
 account.deposit(110)
@@ -26,7 +24,6 @@ account.withdraw(100)
 
 print("Баланс:", account.get_balance())
 
-# Спроба прямої зміни (не працює)
 account.__balance = 10000
 
 print("Баланс після прямої спроби зміни:", account.get_balance())

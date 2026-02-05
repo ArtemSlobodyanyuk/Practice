@@ -18,8 +18,6 @@ class Car:
     def __str__(self):
         return f"{self.brand} ({self.year}), пробіг: {self.mileage} км"
 
-
-# Приклад використання
 car1 = Car("Toyota", 2018, 50000)
 car2 = Car("BMW", 2020, 30000)
 

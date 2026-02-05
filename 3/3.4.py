@@ -48,7 +48,7 @@ def calculate():
         result_var.set("Ділення на 0")
         result_label.config(fg=ERROR_COLOR)
 
-# ===== ІНТЕРФЕЙС =====
+# інтерфейс
 
 tk.Entry(
     window, textvariable=num1_var,
@@ -57,7 +57,7 @@ tk.Entry(
     width=10, justify="center"
 ).grid(row=0, column=0, padx=5, pady=40)
 
-# OptionMenu — ПРАВИЛЬНО
+# OptionMenu
 operation_menu = tk.OptionMenu(
     window,
     operation_var,

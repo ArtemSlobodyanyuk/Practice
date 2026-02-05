@@ -11,23 +11,18 @@ class Animal(ABC):
     def make_sound(self):
         pass
 
-
 class Dog(Animal):
     def make_sound(self):
         return "Гав-гав"
-
 
 class Cat(Animal):
     def make_sound(self):
         return "Мяу"
 
-
 class Cow(Animal):
     def make_sound(self):
         return "Му-у"
 
-
-# Демонстрація
 animals = [
     Dog("Собака"),
     Cat("Кіт"),

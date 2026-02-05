@@ -1,6 +1,6 @@
 import math
 
-#Функції для обчислення площі
+# функції для обчислення площі
 def rectangle_area(width, height):
     return width * height
 def circle_area(radius):
@@ -11,7 +11,7 @@ print("Площа прямокутника 5x10:", rectangle_area(5, 10))
 print("Площа кола з радіусом 3:", circle_area(3))
 
 
-#Базовий клас фігури
+# базовий клас фігури
 class Shape:
     def area(self):
         pass
