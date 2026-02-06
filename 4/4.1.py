@@ -1,6 +1,6 @@
 import requests
 
-#Налаштування API
+# налаштування API
 url = "https://youtube138.p.rapidapi.com/videos/search/"
 headers = {
     "X-RapidAPI-Key": "2e8c2e29bbmsha7a8798072beaf9p1c7a32jsne02584c2918c",

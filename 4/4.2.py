@@ -7,7 +7,7 @@ app = Flask(__name__)
 DATA_FILE = "../users.json"
 
 
-# ---------- helpers ----------
+# helpers
 def load_users():
     if not os.path.exists(DATA_FILE):
         return []
@@ -28,7 +28,7 @@ def response(status: str, data=None, message=""):
     })
 
 
-# ---------- routes ----------
+# routes
 @app.route("/users", methods=["GET"])
 def get_users():
     users = load_users()
